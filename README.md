@@ -1,4 +1,4 @@
-# TechieHelp E-Commerce
+# Internship project @techiehelp.in
 
 A modern, responsive e-commerce platform built with React and Vite for selling tech accessories and gadgets.
 
@@ -84,4 +84,4 @@ The app builds to static files and can be deployed to any platform:
 
 ---
 
-Built with ❤️ for modern web development
+Built with ❤️ as a part of Internship project 
