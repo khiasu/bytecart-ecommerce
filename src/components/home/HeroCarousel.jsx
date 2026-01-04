@@ -166,9 +166,14 @@ export default function HeroCarousel() {
   /**
    * Handle CTA button click
    */
-  const handleCTAClick = (link) => {
+  const handleCTAClick = (link, slide) => {
     if (link.startsWith('/')) {
-      navigate(link);
+      // If it's the "View Offers" button, navigate to /offers
+      if (link.includes('products') && slide.ctaText?.toLowerCase().includes('offer')) {
+        navigate('/offers');
+      } else {
+        navigate(link);
+      }
     } else {
       window.location.href = link;
     }
@@ -197,11 +202,12 @@ export default function HeroCarousel() {
     const b = parseInt(hex.slice(5, 7), 16);
 
     return {
-      background: `linear-gradient(135deg, rgba(${r}, ${g}, ${b}, 0.95) 0%, rgba(${r}, ${g}, ${b}, 0.85) 100%)`,
-      backgroundImage: slide.image ? `url(${slide.image})` : undefined,
+      background: slide.image 
+        ? `linear-gradient(135deg, rgba(${r}, ${g}, ${b}, 0.92) 0%, rgba(${r}, ${g}, ${b}, 0.85) 50%, rgba(${r}, ${g}, ${b}, 0.75) 100%), url(${slide.image})`
+        : `linear-gradient(135deg, rgba(${r}, ${g}, ${b}, 0.95) 0%, rgba(${r}, ${g}, ${b}, 0.85) 100%)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundBlendMode: 'overlay',
+      backgroundRepeat: 'no-repeat',
     };
   };
 
@@ -289,7 +295,7 @@ export default function HeroCarousel() {
                       <Button
                         variant="secondary"
                         size="lg"
-                        onClick={() => handleCTAClick(slide.ctaLink)}
+                        onClick={() => handleCTAClick(slide.ctaLink, slide)}
                         className="shadow-lg"
                         ariaLabel={slide.ctaText}
                       >

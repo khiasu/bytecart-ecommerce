@@ -1,22 +1,21 @@
-@import './styles/animations.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-}
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-body {
-  min-width: 320px;
-  background-color: #fafafa;
-  color: #171717;
-}
+  body {
+    @apply min-w-[320px] bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
+  }
 
-.container {
-  @apply mx-auto w-full max-w-7xl px-4;
+  .container {
+    @apply mx-auto px-4 max-w-7xl;
+  }
 }
 
 ::selection {

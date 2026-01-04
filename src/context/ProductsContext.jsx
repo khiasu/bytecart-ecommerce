@@ -5,6 +5,17 @@ import { SORT_OPTIONS } from '../utils/constants';
 
 const ProductsContext = createContext(null);
 
+const PRICE_BOUNDS = (() => {
+  const prices = Array.isArray(productsData)
+    ? productsData.map((p) => p?.price).filter((p) => typeof p === 'number' && !Number.isNaN(p))
+    : [];
+
+  const min = prices.length ? Math.min(...prices) : 0;
+  const max = prices.length ? Math.max(...prices) : 1000;
+
+  return { min, max };
+})();
+
 /**
  * ProductsProvider component
  * Manages products data, filtering, search, and sorting
@@ -17,7 +28,7 @@ export function ProductsProvider({ children }) {
     category: null,
     searchQuery: '',
     sortBy: SORT_OPTIONS.FEATURED,
-    priceRange: { min: 0, max: 1000 },
+    priceRange: { min: PRICE_BOUNDS.min, max: PRICE_BOUNDS.max },
     rating: 0,
     inStockOnly: false,
   });
@@ -206,7 +217,7 @@ export function ProductsProvider({ children }) {
       category: null,
       searchQuery: '',
       sortBy: SORT_OPTIONS.FEATURED,
-      priceRange: { min: 0, max: 1000 },
+      priceRange: { min: PRICE_BOUNDS.min, max: PRICE_BOUNDS.max },
       rating: 0,
       inStockOnly: false,
     });
@@ -251,6 +262,7 @@ export function ProductsProvider({ children }) {
       resetFilters,
       getProductsByCategory,
       getCategoryBySlug,
+      priceBounds: PRICE_BOUNDS,
     }),
     [products, categories, loading, filters]
   );

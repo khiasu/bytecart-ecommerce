@@ -1,9 +1,20 @@
-import { createContext, useContext, useMemo, useState } from 'react'
+import { createContext, useContext, useMemo, useState, useEffect } from 'react'
 
 const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('bytecart_user')
+      if (stored) {
+        setUser(JSON.parse(stored))
+      }
+    } catch {
+      // ignore
+    }
+  }, [])
 
   const value = useMemo(() => ({ user, setUser }), [user])
 

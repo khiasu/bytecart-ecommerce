@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { Package } from 'lucide-react';
 import ProductCard from './ProductCard';

@@ -5,13 +5,17 @@ import {
   X, 
   Search, 
   User, 
-  ShoppingBag 
+  ShoppingBag,
+  LogOut
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useProducts } from '@contexts/ProductsContext';
+import { useAuth } from '@contexts/AuthContext';
 import useDebounce from '@hooks/useDebounce';
+import ThemeToggle from '@components/common/ThemeToggle';
 import Button from '@components/common/Button';
 import CartIconButton from '@components/common/CartIconButton';
+import { signOut } from '@services/authService';
 
 /**
  * Professional Header Component
@@ -20,10 +24,16 @@ import CartIconButton from '@components/common/CartIconButton';
 export default function Header() {
   const navigate = useNavigate();
   const { updateFilters } = useProducts();
+  const { user, setUser } = useAuth();
   
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bannerDismissed, setBannerDismissed] = useState(() => {
-    return localStorage.getItem('banner_dismissed') === 'true';
+    if (typeof window === 'undefined') return false;
+    try {
+      return window.localStorage.getItem('banner_dismissed') === 'true';
+    } catch {
+      return false;
+    }
   });
   const [searchQuery, setSearchQuery] = useState('');
   const [searchFocused, setSearchFocused] = useState(false);
@@ -77,7 +87,22 @@ export default function Header() {
 
   const dismissBanner = () => {
     setBannerDismissed(true);
-    localStorage.setItem('banner_dismissed', 'true');
+    if (typeof window === 'undefined') return;
+    try {
+      window.localStorage.setItem('banner_dismissed', 'true');
+    } catch {
+      // ignore
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      setUser(null);
+      navigate('/');
+    } catch (error) {
+      console.error('Sign out error:', error);
+    }
   };
 
   const navLinkClassName = ({ isActive }) =>
@@ -119,7 +144,7 @@ export default function Header() {
 
       {/* Main Header */}
       <motion.header
-        className={`sticky top-0 z-50 bg-white border-b border-neutral-200 transition-all duration-200 ${
+        className={`sticky top-0 z-50 bg-white border-b border-neutral-200 transition-all duration-200 dark:bg-neutral-950 dark:border-neutral-800 ${
           isScrolled ? 'shadow-md backdrop-blur-sm' : ''
         }`}
       >
@@ -166,6 +191,7 @@ export default function Header() {
 
             {/* Right Section */}
             <div className="flex items-center gap-3">
+              <ThemeToggle />
               {/* Search Bar - Desktop */}
               <div className="hidden tablet:block">
                 <div className="relative">
@@ -189,15 +215,32 @@ export default function Header() {
               <CartIconButton />
 
               {/* Sign In Button - Desktop */}
-              <Button
-                variant="secondary"
-                size="sm"
-                className="hidden tablet:inline-flex"
-                onClick={() => navigate('/signin')}
-              >
-                <User className="h-4 w-4" />
-                <span className="hidden desktop:inline">Sign In</span>
-              </Button>
+              {user ? (
+                <div className="flex items-center gap-2">
+                  <span className="hidden mobile:block text-sm text-neutral-700 dark:text-neutral-300">
+                    {user.name}
+                  </span>
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    className="hidden tablet:inline-flex"
+                    onClick={handleSignOut}
+                  >
+                    <LogOut className="h-4 w-4" />
+                    <span className="hidden desktop:inline">Sign Out</span>
+                  </Button>
+                </div>
+              ) : (
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="hidden tablet:inline-flex"
+                  onClick={() => navigate('/signin')}
+                >
+                  <User className="h-4 w-4" />
+                  <span className="hidden desktop:inline">Sign In</span>
+                </Button>
+              )}
             </div>
           </div>
         </div>
@@ -307,17 +350,36 @@ export default function Header() {
 
                 {/* Drawer Footer */}
                 <div className="border-t border-neutral-200 p-4">
-                  <Button
-                    variant="primary"
-                    className="w-full"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      navigate('/signin');
-                    }}
-                  >
-                    <User className="h-4 w-4" />
-                    Sign In
-                  </Button>
+                  {user ? (
+                    <div className="space-y-2">
+                      <div className="text-sm text-neutral-600 dark:text-neutral-400 text-center">
+                        Signed in as {user.name}
+                      </div>
+                      <Button
+                        variant="secondary"
+                        className="w-full"
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          handleSignOut();
+                        }}
+                      >
+                        <LogOut className="h-4 w-4" />
+                        Sign Out
+                      </Button>
+                    </div>
+                  ) : (
+                    <Button
+                      variant="primary"
+                      className="w-full"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        navigate('/signin');
+                      }}
+                    >
+                      <User className="h-4 w-4" />
+                      Sign In
+                    </Button>
+                  )}
                 </div>
               </div>
             </motion.div>

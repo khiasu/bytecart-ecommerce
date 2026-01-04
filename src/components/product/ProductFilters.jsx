@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { X } from 'lucide-react';
 import { useProducts } from '@contexts/ProductsContext';
-import { SORT_OPTIONS } from '@utils/constants';
 import Button from '@components/common/Button';
 import Badge from '@components/common/Badge';
+import { CURRENCY_SYMBOL } from '@utils/constants';
 
 /**
  * ProductFilters
@@ -12,11 +12,18 @@ import Badge from '@components/common/Badge';
  * Sidebar with category, price range, rating, and stock filters.
  */
 export default function ProductFilters({ isOpen, onClose }) {
-  const { categories, filters, updateFilters, resetFilters } = useProducts();
+  const { categories, filters, updateFilters, resetFilters, priceBounds } = useProducts();
   const [priceRange, setPriceRange] = useState({
-    min: filters.priceRange?.min || 0,
-    max: filters.priceRange?.max || 1000,
+    min: filters.priceRange?.min ?? priceBounds.min,
+    max: filters.priceRange?.max ?? priceBounds.max,
   });
+
+  useEffect(() => {
+    setPriceRange({
+      min: filters.priceRange?.min ?? priceBounds.min,
+      max: filters.priceRange?.max ?? priceBounds.max,
+    });
+  }, [filters.priceRange, priceBounds.min, priceBounds.max]);
 
   const handleCategoryToggle = (categorySlug) => {
     updateFilters({
@@ -25,7 +32,9 @@ export default function ProductFilters({ isOpen, onClose }) {
   };
 
   const handlePriceRangeChange = (field, value) => {
-    const newRange = { ...priceRange, [field]: parseFloat(value) || 0 };
+    const parsed = parseFloat(value);
+    const numericValue = Number.isNaN(parsed) ? 0 : parsed;
+    const newRange = { ...priceRange, [field]: numericValue };
     setPriceRange(newRange);
     updateFilters({ priceRange: newRange });
   };
@@ -42,7 +51,8 @@ export default function ProductFilters({ isOpen, onClose }) {
   const activeFiltersCount = [
     filters.category,
     filters.rating > 0,
-    filters.priceRange?.min > 0 || filters.priceRange?.max < 1000,
+    (filters.priceRange?.min ?? priceBounds.min) > priceBounds.min ||
+      (filters.priceRange?.max ?? priceBounds.max) < priceBounds.max,
     filters.inStockOnly,
   ].filter(Boolean).length;
 
@@ -116,7 +126,8 @@ export default function ProductFilters({ isOpen, onClose }) {
                 value={priceRange.min}
                 onChange={(e) => handlePriceRangeChange('min', e.target.value)}
                 className="w-full px-3 py-2 border border-neutral-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500"
-                min="0"
+                min={priceBounds.min}
+                max={priceBounds.max}
               />
               <input
                 type="number"
@@ -124,11 +135,12 @@ export default function ProductFilters({ isOpen, onClose }) {
                 value={priceRange.max}
                 onChange={(e) => handlePriceRangeChange('max', e.target.value)}
                 className="w-full px-3 py-2 border border-neutral-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500"
-                min="0"
+                min={priceBounds.min}
+                max={priceBounds.max}
               />
             </div>
             <p className="text-xs text-neutral-500">
-              ${priceRange.min} - ${priceRange.max}
+              {CURRENCY_SYMBOL}{priceRange.min} - {CURRENCY_SYMBOL}{priceRange.max}
             </p>
           </div>
         </div>

@@ -5,7 +5,7 @@
     "subtitle": "Get up to 40% off on premium electronics and accessories",
     "ctaText": "Shop Now",
     "ctaLink": "/products",
-    "image": "https://source.unsplash.com/1200x600/?technology,gadgets",
+    "image": "https://picsum.photos/seed/bytecart-banner1/1200/600",
     "bgColor": "#3b82f6"
   },
   {
@@ -14,7 +14,7 @@
     "subtitle": "Level up your setup with cutting-edge gaming gear",
     "ctaText": "Explore Gaming",
     "ctaLink": "/products?category=gaming",
-    "image": "https://source.unsplash.com/1200x600/?gaming,setup",
+    "image": "https://picsum.photos/seed/bytecart-banner2/1200/600",
     "bgColor": "#8b5cf6"
   },
   {
@@ -23,7 +23,7 @@
     "subtitle": "Experience crystal-clear sound with our premium audio collection",
     "ctaText": "Discover Audio",
     "ctaLink": "/products?category=audio",
-    "image": "https://source.unsplash.com/1200x600/?headphones,audio",
+    "image": "https://picsum.photos/seed/bytecart-banner3/1200/600",
     "bgColor": "#10b981"
   }
 ]
