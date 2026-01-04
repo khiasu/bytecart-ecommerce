@@ -86,7 +86,3 @@ The app builds to static files and can be deployed to any platform:
 
 ---
 
-<<<<<<<
-Built with ❤️ for modern web development | Internship project at [TechieHelp](https://www.techiehelp.in/)
-======= 
->>>>>>>
