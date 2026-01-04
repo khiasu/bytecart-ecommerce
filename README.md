@@ -2,6 +2,8 @@
 
 A modern, responsive e-commerce platform built with React and Vite for selling tech accessories and gadgets.
 
+*Developed as an internship project at [TechieHelp](https://www.techiehelp.in/)*
+
 ## What's Inside
 
 - **React 18** with modern hooks and patterns
@@ -84,4 +86,4 @@ The app builds to static files and can be deployed to any platform:
 
 ---
 
-Built with ❤️ for modern web development
+Built with ❤️ for modern web development | Internship project at [TechieHelp](https://www.techiehelp.in/)
