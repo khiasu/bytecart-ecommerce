@@ -3,28 +3,28 @@
     "id": "cat1",
     "name": "Electronics",
     "description": "Latest gadgets and electronic devices",
-    "image": "https://picsum.photos/seed/bytecart-cat-electronics/600/400",
+    "image": "/images/electronics.jpeg",
     "slug": "electronics"
   },
   {
     "id": "cat2",
     "name": "Audio",
     "description": "Premium headphones, speakers, and audio gear",
-    "image": "https://picsum.photos/seed/bytecart-cat-audio/600/400",
+    "image": "/images/audio-essentials.jpeg",
     "slug": "audio"
   },
   {
     "id": "cat3",
     "name": "Gaming",
     "description": "Gaming peripherals and accessories",
-    "image": "https://picsum.photos/seed/bytecart-cat-gaming/600/400",
+    "image": "/images/gaming-essentials.jpeg",
     "slug": "gaming"
   },
   {
     "id": "cat4",
     "name": "Accessories",
     "description": "Essential tech accessories and add-ons",
-    "image": "https://picsum.photos/seed/bytecart-cat-accessories/600/400",
+    "image": "/images/accessories.jpeg",
     "slug": "accessories"
   }
 ]

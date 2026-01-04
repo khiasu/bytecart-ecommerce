@@ -62,11 +62,13 @@ export default function Products() {
         )}
 
         <div className="flex gap-6">
-          {/* Filter Sidebar */}
-          <ProductFilters
-            isOpen={isFiltersOpen}
-            onClose={() => setIsFiltersOpen(false)}
-          />
+          {/* Filter Sidebar - Desktop Only */}
+          <div className="hidden tablet:block">
+            <ProductFilters
+              isOpen={isFiltersOpen}
+              onClose={() => setIsFiltersOpen(false)}
+            />
+          </div>
 
           {/* Main Content */}
           <div className="flex-1 min-w-0">

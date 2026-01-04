@@ -203,7 +203,7 @@ export default function HeroCarousel() {
 
     return {
       background: slide.image 
-        ? `linear-gradient(135deg, rgba(${r}, ${g}, ${b}, 0.92) 0%, rgba(${r}, ${g}, ${b}, 0.85) 50%, rgba(${r}, ${g}, ${b}, 0.75) 100%), url(${slide.image})`
+        ? `linear-gradient(135deg, rgba(${r}, ${g}, ${b}, 0.75) 0%, rgba(${r}, ${g}, ${b}, 0.65) 50%, rgba(${r}, ${g}, ${b}, 0.55) 100%), url(${slide.image})`
         : `linear-gradient(135deg, rgba(${r}, ${g}, ${b}, 0.95) 0%, rgba(${r}, ${g}, ${b}, 0.85) 100%)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -233,7 +233,7 @@ export default function HeroCarousel() {
       onTouchEnd={onTouchEnd}
       aria-label="Promotional carousel"
     >
-      <div className="relative h-[350px] tablet:h-[400px] desktop:h-[500px]">
+      <div className="relative h-[400px] tablet:h-[450px] desktop:h-[550px]">
         <AnimatePresence mode="wait" initial={false}>
           {slides.map((slide, index) => {
             if (index !== currentSlide) return null;
@@ -264,13 +264,13 @@ export default function HeroCarousel() {
               >
                 {/* Content Container */}
                 <div className="container relative h-full flex items-center">
-                  <div className="max-w-2xl">
+                  <div className="w-full desktop:w-3/4">
                     {/* Headline */}
                     <motion.h1
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2, duration: 0.4 }}
-                      className="font-heading text-4xl font-bold leading-tight text-white tablet:text-5xl desktop:text-6xl"
+                      className="font-heading text-3xl font-bold leading-tight text-white tablet:text-4xl desktop:text-5xl"
                     >
                       {slide.title}
                     </motion.h1>
@@ -280,7 +280,7 @@ export default function HeroCarousel() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4, duration: 0.4 }}
-                      className="mt-4 text-lg text-white/90 tablet:text-xl desktop:text-2xl"
+                      className="mt-3 text-base text-white/90 tablet:text-lg desktop:text-xl max-w-none"
                     >
                       {slide.subtitle}
                     </motion.p>
@@ -290,7 +290,7 @@ export default function HeroCarousel() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6, duration: 0.4 }}
-                      className="mt-6"
+                      className="mt-5"
                     >
                       <Button
                         variant="secondary"
@@ -301,6 +301,26 @@ export default function HeroCarousel() {
                       >
                         {slide.ctaText}
                       </Button>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Decorative Elements for Desktop */}
+                  <div className="hidden desktop:block desktop:w-1/4">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.8, duration: 0.5 }}
+                      className="flex flex-col items-center justify-center space-y-4"
+                    >
+                      <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                        <div className="w-8 h-8 bg-white/30 rounded-full"></div>
+                      </div>
+                      <div className="w-16 h-16 rounded-full bg-white/5 backdrop-blur-sm border border-white/15 flex items-center justify-center">
+                        <div className="w-6 h-6 bg-white/20 rounded-full"></div>
+                      </div>
+                      <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-sm border border-white/15 flex items-center justify-center">
+                        <div className="w-4 h-4 bg-white/20 rounded-full"></div>
+                      </div>
                     </motion.div>
                   </div>
                 </div>

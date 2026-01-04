@@ -35,6 +35,11 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Handle link clicks with scroll to top
+  const handleLinkClick = () => {
+    scrollToTop();
+  };
+
   return (
     <>
       <footer className="bg-neutral-900 text-neutral-300">
@@ -104,36 +109,42 @@ export default function Footer() {
                 <Link
                   to="/"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Home
                 </Link>
                 <Link
                   to="/products"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Products
                 </Link>
                 <Link
                   to="/about"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   About Us
                 </Link>
                 <Link
                   to="/contact"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Contact
                 </Link>
                 <Link
                   to="/faq"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   FAQ
                 </Link>
                 <Link
                   to="/blog"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Blog
                 </Link>
@@ -147,36 +158,42 @@ export default function Footer() {
                 <Link
                   to="/shipping"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Shipping & Delivery
                 </Link>
                 <Link
                   to="/returns"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Returns & Refunds
                 </Link>
                 <Link
                   to="/orders"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Track Your Order
                 </Link>
                 <Link
                   to="/support"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Help & Support
                 </Link>
                 <Link
                   to="/size-guide"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Size Guide
                 </Link>
                 <Link
                   to="/payment"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"
+                  onClick={handleLinkClick}
                 >
                   Payment Methods
                 </Link>
@@ -261,6 +278,7 @@ export default function Footer() {
               <Link
                 to="/privacy"
                 className="text-neutral-500 hover:text-primary-400 transition-colors"
+                onClick={handleLinkClick}
               >
                 Privacy Policy
               </Link>
@@ -268,6 +286,7 @@ export default function Footer() {
               <Link
                 to="/terms"
                 className="text-neutral-500 hover:text-primary-400 transition-colors"
+                onClick={handleLinkClick}
               >
                 Terms of Service
               </Link>
@@ -275,6 +294,7 @@ export default function Footer() {
               <Link
                 to="/cookies"
                 className="text-neutral-500 hover:text-primary-400 transition-colors"
+                onClick={handleLinkClick}
               >
                 Cookie Policy
               </Link>

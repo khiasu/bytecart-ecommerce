@@ -7,7 +7,7 @@
     "originalPrice": 10999,
     "rating": 4.6,
     "reviews": 128,
-    "image": "https://picsum.photos/seed/bytecart-p1/400/400",
+    "image": "/images/wireless headset.jpeg",
     "category": "audio",
     "inStock": true,
     "featured": true
@@ -20,7 +20,7 @@
     "originalPrice": 8299,
     "rating": 4.4,
     "reviews": 92,
-    "image": "https://picsum.photos/seed/bytecart-p2/400/400",
+    "image": "/images/gaming keyboard mechanical.jpeg",
     "category": "gaming",
     "inStock": true,
     "featured": true
@@ -32,7 +32,7 @@
     "price": 3299,
     "rating": 4.2,
     "reviews": 61,
-    "image": "https://picsum.photos/seed/bytecart-p3/400/400",
+    "image": "/images/7 in 1 usbc hub.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": true
@@ -45,7 +45,7 @@
     "originalPrice": 14999,
     "rating": 4.5,
     "reviews": 203,
-    "image": "https://picsum.photos/seed/bytecart-p4/400/400",
+    "image": "/images/smart fitness watch.jpeg",
     "category": "electronics",
     "inStock": true,
     "featured": true
@@ -58,7 +58,7 @@
     "originalPrice": 12499,
     "rating": 4.7,
     "reviews": 175,
-    "image": "https://picsum.photos/seed/bytecart-p5/400/400",
+    "image": "/images/portable ssd.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": false
@@ -71,7 +71,7 @@
     "originalPrice": 1999,
     "rating": 4.3,
     "reviews": 89,
-    "image": "https://picsum.photos/seed/bytecart-p6/400/400",
+    "image": "/images/gaming mouse.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": false
@@ -83,7 +83,7 @@
     "price": 999,
     "rating": 4.1,
     "reviews": 45,
-    "image": "https://picsum.photos/seed/bytecart-p7/400/400",
+    "image": "/images/gaming mousepad.jpeg",
     "category": "gaming",
     "inStock": true,
     "featured": false
@@ -96,7 +96,7 @@
     "originalPrice": 4999,
     "rating": 4.4,
     "reviews": 156,
-    "image": "https://picsum.photos/seed/bytecart-p8/400/400",
+    "image": "/images/blutooth speaker.jpeg",
     "category": "audio",
     "inStock": true,
     "featured": false
@@ -108,7 +108,7 @@
     "price": 499,
     "rating": 4.0,
     "reviews": 78,
-    "image": "https://picsum.photos/seed/bytecart-p9/400/400",
+    "image": "/images/usb cable.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": false
@@ -120,7 +120,7 @@
     "price": 1999,
     "rating": 4.5,
     "reviews": 112,
-    "image": "https://picsum.photos/seed/bytecart-p10/400/400",
+    "image": "/images/laptop stand.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": false
@@ -133,7 +133,7 @@
     "originalPrice": 5999,
     "rating": 4.3,
     "reviews": 94,
-    "image": "https://picsum.photos/seed/bytecart-p11/400/400",
+    "image": "/images/web cam.jpeg",
     "category": "electronics",
     "inStock": true,
     "featured": false
@@ -146,7 +146,7 @@
     "originalPrice": 8999,
     "rating": 4.6,
     "reviews": 267,
-    "image": "https://picsum.photos/seed/bytecart-p12/400/400",
+    "image": "/images/wireless earbuds.jpeg",
     "category": "audio",
     "inStock": true,
     "featured": true
@@ -159,7 +159,7 @@
     "originalPrice": 9999,
     "rating": 4.5,
     "reviews": 189,
-    "image": "https://picsum.photos/seed/bytecart-p13/400/400",
+    "image": "/images/gaming headset.jpeg",
     "category": "gaming",
     "inStock": true,
     "featured": true
@@ -171,7 +171,7 @@
     "price": 1499,
     "rating": 4.2,
     "reviews": 67,
-    "image": "https://picsum.photos/seed/bytecart-p14/400/400",
+    "image": "/images/tablet stand.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": false
@@ -184,7 +184,7 @@
     "originalPrice": 3499,
     "rating": 4.4,
     "reviews": 143,
-    "image": "https://picsum.photos/seed/bytecart-p15/400/400",
+    "image": "/images/powerbank.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": false
@@ -197,7 +197,7 @@
     "originalPrice": 12999,
     "rating": 4.6,
     "reviews": 98,
-    "image": "https://picsum.photos/seed/bytecart-p16/400/400",
+    "image": "/images/desktop stand.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": false
@@ -209,7 +209,7 @@
     "price": 1799,
     "rating": 4.3,
     "reviews": 124,
-    "image": "https://picsum.photos/seed/bytecart-p17/400/400",
+    "image": "/images/rgb strip.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": false
@@ -221,7 +221,7 @@
     "price": 1299,
     "rating": 4.1,
     "reviews": 56,
-    "image": "https://picsum.photos/seed/bytecart-p18/400/400",
+    "image": "/images/usb hub 4-port.jpeg",
     "category": "accessories",
     "inStock": true,
     "featured": false
