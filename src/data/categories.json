@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cat1",
+    "name": "Electronics",
+    "description": "Latest gadgets and electronic devices",
+    "image": "https://source.unsplash.com/600x400/?electronics",
+    "slug": "electronics"
+  },
+  {
+    "id": "cat2",
+    "name": "Audio",
+    "description": "Premium headphones, speakers, and audio gear",
+    "image": "https://source.unsplash.com/600x400/?audio",
+    "slug": "audio"
+  },
+  {
+    "id": "cat3",
+    "name": "Gaming",
+    "description": "Gaming peripherals and accessories",
+    "image": "https://source.unsplash.com/600x400/?gaming",
+    "slug": "gaming"
+  },
+  {
+    "id": "cat4",
+    "name": "Accessories",
+    "description": "Essential tech accessories and add-ons",
+    "image": "https://source.unsplash.com/600x400/?tech-accessories",
+    "slug": "accessories"
+  }
+]
