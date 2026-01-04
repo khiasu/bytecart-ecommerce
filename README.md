@@ -1,6 +1,6 @@
-# TechieHelp E-Commerce
+# Bytecart
 
-A modern, responsive e-commerce platform built with React and Vite for selling tech accessories and gadgets.
+A modern, responsive e-commerce platform for tech and gaming products built with React and Vite.
 
 *Developed as an internship project at [TechieHelp](https://www.techiehelp.in/)*
 
@@ -88,6 +88,5 @@ The app builds to static files and can be deployed to any platform:
 
 <<<<<<< HEAD
 Built with ❤️ for modern web development | Internship project at [TechieHelp](https://www.techiehelp.in/)
-=======
-Built with ❤️ as a part of Internship project 
+======= 
 >>>>>>> aea7eae6554410ec6f2d3d6203856354633145ff
