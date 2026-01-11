@@ -71,7 +71,8 @@ export default function UPIPayment() {
       const newOrder = await placeOrder(orderData);
       setOrderId(newOrder.id);
       setPaymentStatus('success');
-      clearCart();
+      // Clear cart after showing success state
+      setTimeout(() => clearCart(), 1000);
     } catch (error) {
       console.error('Error placing order:', error);
       setPaymentStatus('error');
@@ -143,6 +144,9 @@ export default function UPIPayment() {
                 </p>
                 <p className="text-blue-700 text-xs mt-2">
                   Please keep your phone handy for order confirmation.
+                </p>
+                <p className="text-blue-600 text-xs mt-1 font-medium">
+                  ⏱️ Verification process takes 5-15 minutes
                 </p>
               </div>
               

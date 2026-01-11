@@ -2,6 +2,8 @@
 
 A simple e-commerce platform for tech accessories.
 
+*This project was built as part of the full-stack internship at TechieHelp: https://www.techiehelp.in/*
+
 ## Quick Start
 
 ```bash

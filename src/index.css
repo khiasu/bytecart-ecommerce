@@ -14,7 +14,7 @@
   }
 
   .container {
-    @apply mx-auto px-4 max-w-7xl;
+    @apply mx-auto px-3 max-w-7xl mobile:px-2;
   }
 }
 

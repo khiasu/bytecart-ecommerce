@@ -85,7 +85,7 @@ export default function ProductGrid({
   }
 
   return (
-    <div>
+    <div className="w-full mobile:px-3 tablet:px-6">
       {/* Filters and Sort Bar */}
       {(showFilters || showSort) && (
         <div className="mb-6 flex flex-col tablet:flex-row tablet:items-center tablet:justify-between gap-4">
@@ -156,7 +156,7 @@ export default function ProductGrid({
       )}
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 mobile:grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 gap-4 tablet:gap-6">
+      <div className="grid grid-cols-2 gap-3 mobile:gap-4 tablet:grid-cols-3 desktop:grid-cols-4 tablet:gap-6">
         {products.map((product, index) => (
           <motion.div
             key={product.id}

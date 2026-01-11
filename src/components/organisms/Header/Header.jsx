@@ -213,31 +213,26 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* Sign In Button - Desktop only */}
+              {/* Sign In/Out Button - Always visible on mobile, desktop only when not logged in */}
               {user ? (
-                <div className="flex items-center gap-2">
-                  <span className="hidden mobile:block text-sm text-neutral-700 dark:text-neutral-300">
-                    {user.name}
-                  </span>
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    className="hidden tablet:inline-flex"
-                    onClick={handleSignOut}
-                  >
-                    <LogOut className="h-4 w-4" />
-                    <span className="hidden desktop:inline">Sign Out</span>
-                  </Button>
-                </div>
-              ) : (
+                // Mobile: Show user avatar in sidebar, Desktop: show sign out
                 <Button
                   variant="secondary"
                   size="sm"
                   className="hidden tablet:inline-flex"
+                  onClick={handleSignOut}
+                >
+                  <LogOut className="h-4 w-4" />
+                  <span className="hidden desktop:inline">Sign Out</span>
+                </Button>
+              ) : (
+                <Button
+                  variant="secondary"
+                  size="sm"
                   onClick={() => navigate('/signin')}
                 >
                   <User className="h-4 w-4" />
-                  <span className="hidden desktop:inline">Sign In</span>
+                  <span className="hidden mobile:inline">Sign In</span>
                 </Button>
               )}
             </div>
@@ -350,10 +345,25 @@ export default function Header() {
                 {/* Drawer Footer */}
                 <div className="border-t border-neutral-200 p-4">
                   {user ? (
-                    <div className="space-y-2">
-                      <div className="text-sm text-neutral-600 dark:text-neutral-400 text-center">
-                        Signed in as {user.name}
+                    <div className="space-y-4">
+                      {/* User Profile Section */}
+                      <div className="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg">
+                        <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center">
+                          <span className="text-white font-semibold">
+                            {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                          </span>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-neutral-900 truncate">
+                            {user.name || 'User'}
+                          </p>
+                          <p className="text-sm text-neutral-600 truncate">
+                            {user.email || 'guest@example.com'}
+                          </p>
+                        </div>
                       </div>
+                      
+                      {/* Sign Out Button */}
                       <Button
                         variant="secondary"
                         className="w-full"

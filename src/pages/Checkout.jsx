@@ -156,6 +156,9 @@ export default function Checkout() {
               <p className="text-sm text-neutral-500 mb-6">
                 Upon verification, your order details will be sent to your registered WhatsApp and mobile number via SMS.
               </p>
+              <p className="text-xs text-neutral-400 mb-6">
+                ⏱️ Verification process takes 5-15 minutes
+              </p>
               <div className="flex gap-4 justify-center">
                 <Button variant="outline" onClick={() => navigate('/products')}>
                   Continue Shopping

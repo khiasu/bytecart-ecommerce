@@ -17,7 +17,7 @@ export default function Support() {
           </ol>
         </nav>
 
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mobile:px-3 tablet:px-6">
           <h1 className="font-heading text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
             Customer Support
           </h1>
@@ -29,63 +29,63 @@ export default function Support() {
             </p>
           </div>
 
-          <div className="grid gap-6 tablet:grid-cols-2 mb-10">
-            <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-soft dark:border-neutral-800 dark:bg-neutral-950">
-              <div className="flex items-center gap-3 mb-4">
-                <Headphones className="h-6 w-6 text-primary-600" />
-                <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          <div className="grid gap-4 grid-cols-2 mobile:gap-3 tablet:grid-cols-2 tablet:gap-6 mb-8">
+            <div className="rounded-xl border border-neutral-200 bg-white p-4 mobile:p-3 shadow-soft dark:border-neutral-800 dark:bg-neutral-950">
+              <div className="flex items-center gap-2 mb-3">
+                <Headphones className="h-5 w-5 text-primary-600" />
+                <h2 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
                   Phone Support
                 </h2>
               </div>
-              <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <ul className="space-y-1 text-xs text-neutral-600 dark:text-neutral-400">
                 <li>• Toll-free: 1800-XXX-XXXX</li>
-                <li>• Monday - Saturday: 9 AM - 8 PM</li>
+                <li>• Mon-Sat: 9 AM - 8 PM</li>
                 <li>• Sunday: 10 AM - 6 PM</li>
-                <li>• Average wait time: 2-3 minutes</li>
+                <li>• Wait: 2-3 minutes</li>
               </ul>
             </div>
 
-            <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-soft dark:border-neutral-800 dark:bg-neutral-950">
-              <div className="flex items-center gap-3 mb-4">
-                <Mail className="h-6 w-6 text-primary-600" />
-                <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+            <div className="rounded-xl border border-neutral-200 bg-white p-4 mobile:p-3 shadow-soft dark:border-neutral-800 dark:bg-neutral-950">
+              <div className="flex items-center gap-2 mb-3">
+                <Mail className="h-5 w-5 text-primary-600" />
+                <h2 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
                   Email Support
                 </h2>
               </div>
-              <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <ul className="space-y-1 text-xs text-neutral-600 dark:text-neutral-400">
                 <li>• support@techiehelp.com</li>
-                <li>• Response within 24 hours</li>
-                <li>• Attach order ID for faster service</li>
+                <li>• Response: 24 hours</li>
+                <li>• Include order ID</li>
                 <li>• Available 24/7</li>
               </ul>
             </div>
 
-            <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-soft dark:border-neutral-800 dark:bg-neutral-950">
-              <div className="flex items-center gap-3 mb-4">
-                <MessageCircle className="h-6 w-6 text-primary-600" />
-                <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+            <div className="rounded-xl border border-neutral-200 bg-white p-4 mobile:p-3 shadow-soft dark:border-neutral-800 dark:bg-neutral-950">
+              <div className="flex items-center gap-2 mb-3">
+                <MessageCircle className="h-5 w-5 text-primary-600" />
+                <h2 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
                   Live Chat
                 </h2>
               </div>
-              <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <ul className="space-y-1 text-xs text-neutral-600 dark:text-neutral-400">
                 <li>• Available on website</li>
-                <li>• Monday - Saturday: 10 AM - 8 PM</li>
+                <li>• Mon-Sat: 10 AM - 8 PM</li>
                 <li>• Instant responses</li>
-                <li>• Screen sharing support available</li>
+                <li>• Screen sharing</li>
               </ul>
             </div>
 
-            <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-soft dark:border-neutral-800 dark:bg-neutral-950">
-              <div className="flex items-center gap-3 mb-4">
-                <Clock className="h-6 w-6 text-primary-600" />
-                <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+            <div className="rounded-xl border border-neutral-200 bg-white p-4 mobile:p-3 shadow-soft dark:border-neutral-800 dark:bg-neutral-950">
+              <div className="flex items-center gap-2 mb-3">
+                <Clock className="h-5 w-5 text-primary-600" />
+                <h2 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
                   Response Times
                 </h2>
               </div>
-              <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-                <li>• Urgent issues: 2-4 hours</li>
-                <li>• General inquiries: 24 hours</li>
-                <li>• Technical support: 12-24 hours</li>
+              <ul className="space-y-1 text-xs text-neutral-600 dark:text-neutral-400">
+                <li>• Urgent: 2-4 hours</li>
+                <li>• General: 24 hours</li>
+                <li>• Technical: 12-24 hours</li>
                 <li>• Feedback: 48 hours</li>
               </ul>
             </div>
