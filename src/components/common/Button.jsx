@@ -20,13 +20,13 @@ import { cn } from '@utils/helpers'
  */
 export default function Button({
   children,
-  variant,
-  size,
+  variant = 'primary',
+  size = 'md',
   onClick,
-  disabled,
-  loading,
-  className,
-  type,
+  disabled = false,
+  loading = false,
+  className = '',
+  type = 'button',
   ariaLabel,
 }) {
   const isDisabled = disabled || loading
@@ -94,15 +94,4 @@ Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   /** Optional aria-label for icon-only or ambiguous labels */
   ariaLabel: PropTypes.string,
-}
-
-Button.defaultProps = {
-  variant: 'primary',
-  size: 'md',
-  onClick: undefined,
-  disabled: false,
-  loading: false,
-  className: '',
-  type: 'button',
-  ariaLabel: undefined,
 }

@@ -54,15 +54,12 @@ export default function Header() {
   // Update products filter when debounced search changes
   useEffect(() => {
     if (debouncedSearch) {
-      updateFilters({ searchQuery: debouncedSearch });
       // Navigate to products page if not already there
       if (window.location.pathname !== '/products') {
         navigate('/products');
       }
-    } else {
-      updateFilters({ searchQuery: '' });
     }
-  }, [debouncedSearch, updateFilters, navigate]);
+  }, [debouncedSearch, navigate]);
 
   // Close mobile menu on escape key
   useEffect(() => {
@@ -151,7 +148,7 @@ export default function Header() {
         <div className="container">
           <div className="flex h-16 items-center justify-between gap-4">
             {/* Left Section */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-1">
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(true)}
@@ -169,7 +166,7 @@ export default function Header() {
                   className="flex items-center gap-2"
                 >
                   <ShoppingBag className="h-7 w-7 text-primary-600" />
-                  <span className="font-heading text-xl font-bold text-neutral-900 hidden mobile:inline">
+                  <span className="font-heading text-xl font-bold text-neutral-900 dark:text-neutral-100 hidden mobile:inline">
                     ByteCart
                   </span>
                 </motion.div>
@@ -190,9 +187,14 @@ export default function Header() {
             </nav>
 
             {/* Right Section */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              {/* Theme Toggle - Always visible */}
               <ThemeToggle />
-              {/* Search Bar - Desktop */}
+
+              {/* Cart Button - Always visible */}
+              <CartIconButton />
+
+              {/* Search Bar - Desktop only */}
               <div className="hidden tablet:block">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
@@ -211,10 +213,7 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* Cart Button */}
-              <CartIconButton />
-
-              {/* Sign In Button - Desktop */}
+              {/* Sign In Button - Desktop only */}
               {user ? (
                 <div className="flex items-center gap-2">
                   <span className="hidden mobile:block text-sm text-neutral-700 dark:text-neutral-300">

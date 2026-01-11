@@ -16,6 +16,7 @@ import Shipping from '@pages/Shipping'
 import Returns from '@pages/Returns'
 import Support from '@pages/Support'
 import Payment from '@pages/Payment'
+import UPIPayment from '@pages/UPIPayment'
 import SignIn from '@pages/SignIn'
 import Offers from '@pages/Offers'
 
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: 'offers', element: <Offers /> },
       { path: 'cart', element: <Cart /> },
       { path: 'checkout', element: <Checkout /> },
+      { path: 'upi-payment', element: <UPIPayment /> },
       { path: 'orders', element: <Orders /> },
       { path: 'about', element: <About /> },
       { path: 'contact', element: <Contact /> },

@@ -71,7 +71,7 @@ export default function CartDrawer({ isOpen, onClose }) {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed right-0 top-0 h-full w-full tablet:max-w-[400px] bg-white shadow-2xl z-50 flex flex-col"
+            className="fixed right-0 top-0 h-full w-full tablet:max-w-[400px] bg-white shadow-2xl z-50 flex flex-col max-h-screen"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-neutral-200">
@@ -135,9 +135,9 @@ export default function CartDrawer({ isOpen, onClose }) {
                 </div>
 
                 {/* Cart Summary (Sticky Bottom) */}
-                <div className="border-t border-neutral-200 bg-white">
+                <div className="border-t border-neutral-200 bg-white p-6">
                   <CartSummary onCheckout={handleCheckout} />
-                  <div className="p-6 pt-0">
+                  <div className="mt-4 pt-4 border-t border-neutral-200">
                     <button
                       type="button"
                       onClick={handleContinueShopping}

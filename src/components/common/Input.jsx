@@ -17,16 +17,16 @@ import { cn } from '@utils/helpers'
  * ```
  */
 export default function Input({
-  type,
-  placeholder,
-  value,
+  type = 'text',
+  placeholder = '',
+  value = '',
   onChange,
-  error,
+  error = '',
   icon: Icon,
-  iconPosition,
-  disabled,
-  className,
-  name,
+  iconPosition = 'left',
+  disabled = false,
+  className = '',
+  name = '',
   id,
   autoComplete,
 }) {
@@ -104,19 +104,4 @@ Input.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   autoComplete: PropTypes.string,
-}
-
-Input.defaultProps = {
-  type: 'text',
-  placeholder: '',
-  value: '',
-  onChange: undefined,
-  error: '',
-  icon: undefined,
-  iconPosition: 'left',
-  disabled: false,
-  className: '',
-  name: undefined,
-  id: undefined,
-  autoComplete: undefined,
 }

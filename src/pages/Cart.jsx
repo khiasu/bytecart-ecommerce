@@ -9,6 +9,10 @@ export default function Cart() {
   const navigate = useNavigate();
   const { items, removeFromCart, updateQuantity, getCartTotals, clearCart } = useCart();
   const totals = getCartTotals();
+  
+  // Debug: Log cart items
+  console.log('Cart items:', items);
+  console.log('Cart totals:', totals);
 
   if (items.length === 0) {
     return (
@@ -200,13 +204,23 @@ export default function Cart() {
                 </div>
               )}
 
-              <Button
-                className="w-full"
-                size="lg"
-                onClick={() => navigate('/checkout')}
-              >
-                Proceed to Checkout
-              </Button>
+              <div className="space-y-3 border-t border-neutral-200 pt-6">
+                <Button
+                  className="w-full"
+                  size="lg"
+                  onClick={() => navigate('/upi-payment')}
+                >
+                  📱 Pay with UPI
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  size="lg"
+                  onClick={() => navigate('/checkout')}
+                >
+                  💵 Cash on Delivery (COD)
+                </Button>
+              </div>
             </Card>
           </div>
         </div>

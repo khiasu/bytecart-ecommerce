@@ -15,7 +15,7 @@ import { cn } from '@utils/helpers'
  * <Card onClick={() => {}} hoverable role="button" tabIndex={0}>Clickable</Card>
  * ```
  */
-export default function Card({ children, className, hoverable, onClick }) {
+export default function Card({ children, className = '', hoverable = false, onClick }) {
   const isInteractive = Boolean(onClick)
 
   const base =
@@ -51,10 +51,4 @@ Card.propTypes = {
   className: PropTypes.string,
   hoverable: PropTypes.bool,
   onClick: PropTypes.func,
-}
-
-Card.defaultProps = {
-  className: '',
-  hoverable: false,
-  onClick: undefined,
 }

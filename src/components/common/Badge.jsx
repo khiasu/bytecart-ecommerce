@@ -15,7 +15,7 @@ import { cn } from '@utils/helpers'
  * <Badge variant="warning" size="sm">-30%</Badge>
  * ```
  */
-export default function Badge({ children, variant, size, className }) {
+export default function Badge({ children, variant = 'default', size = 'md', className = '' }) {
   const base =
     'inline-flex items-center rounded-full font-medium leading-none transition duration-200'
 
@@ -41,10 +41,4 @@ Badge.propTypes = {
   variant: PropTypes.oneOf(['default', 'success', 'warning', 'error', 'info']),
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   className: PropTypes.string,
-}
-
-Badge.defaultProps = {
-  variant: 'default',
-  size: 'md',
-  className: '',
 }

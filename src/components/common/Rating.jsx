@@ -14,7 +14,7 @@ import { cn } from '@utils/helpers'
  * <Rating rating={4.5} reviews={128} size="md" />
  * ```
  */
-export default function Rating({ rating, reviews, size, className }) {
+export default function Rating({ rating, reviews, size = 'md', className = '' }) {
   const normalized = Math.max(0, Math.min(5, Number(rating) || 0))
 
   const sizes = {
@@ -79,10 +79,4 @@ Rating.propTypes = {
   reviews: PropTypes.number,
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   className: PropTypes.string,
-}
-
-Rating.defaultProps = {
-  reviews: undefined,
-  size: 'md',
-  className: '',
 }

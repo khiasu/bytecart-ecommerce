@@ -21,7 +21,7 @@ export default function CartSummary({ onCheckout }) {
   );
 
   return (
-    <div className="p-6">
+    <div>
       {/* Free Shipping Progress */}
       {totals.subtotal < FREE_SHIPPING_THRESHOLD && totals.subtotal > 0 && (
         <motion.div

@@ -26,7 +26,7 @@ export default function CategoryGrid() {
   return (
     <section className="py-12">
       <div className="container">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 mobile:grid-cols-2 tablet:grid-cols-2">
           {mainCategories.map((category, index) => {
             const products = getProductsByCategory(category.slug);
             const productCount = products.length;

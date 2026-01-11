@@ -219,10 +219,10 @@ export default function Footer() {
                 <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-primary-400 mt-0.5 flex-shrink-0" />
                   <a
-                    href="tel:+919863765861"
+                    href="tel:+919876543210"
                     className="text-sm text-neutral-400 hover:text-primary-400 transition-colors"
                   >
-                    +91 98637 65861
+                    +91 98765 43210
                   </a>
                 </div>
 
@@ -258,19 +258,9 @@ export default function Footer() {
               © 2025 ByteCart. All rights reserved. | Powered by TechieHelp
             </div>
 
-            {/* Center - Payment Icons */}
+            {/* Center - Payment Info */}
             <div className="flex items-center gap-4 text-neutral-500">
-              <span className="text-xs">We accept:</span>
-              <div className="flex items-center gap-2">
-                <span className="text-lg" aria-label="Visa">💳</span>
-                <span className="text-xs">Visa</span>
-                <span className="text-neutral-600">|</span>
-                <span className="text-xs">Mastercard</span>
-                <span className="text-neutral-600">|</span>
-                <span className="text-xs">PayPal</span>
-                <span className="text-neutral-600">|</span>
-                <span className="text-xs">Apple Pay</span>
-              </div>
+              <span className="text-xs">Secure payments available</span>
             </div>
 
             {/* Right - Legal Links */}

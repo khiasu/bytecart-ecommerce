@@ -15,7 +15,7 @@ import { cn } from '@utils/helpers'
  * <Image src={url} alt="Product" aspectRatio="1/1" className="rounded-xl" />
  * ```
  */
-export default function Image({ src, alt, className, aspectRatio }) {
+export default function Image({ src, alt, className = '', aspectRatio }) {
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasError, setHasError] = useState(false)
 
@@ -71,9 +71,4 @@ Image.propTypes = {
   className: PropTypes.string,
   /** CSS aspect-ratio string e.g. "1/1", "16/9" */
   aspectRatio: PropTypes.string,
-}
-
-Image.defaultProps = {
-  className: '',
-  aspectRatio: undefined,
 }

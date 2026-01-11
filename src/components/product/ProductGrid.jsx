@@ -179,10 +179,3 @@ ProductGrid.propTypes = {
   showCount: PropTypes.bool,
 };
 
-ProductGrid.defaultProps = {
-  products: null,
-  showFilters: true,
-  showSort: true,
-  showCount: true,
-};
-

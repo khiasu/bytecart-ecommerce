@@ -85,8 +85,7 @@ export default function SignIn() {
                 </div>
               )}
 
-              <div>
-                <Input
+              <Input
                   type="email"
                   name="email"
                   placeholder="Email address"
@@ -95,13 +94,10 @@ export default function SignIn() {
                   error={errors.email}
                   required
                   autoComplete="email"
-                >
-                  <Mail className="h-4 w-4" />
-                </Input>
-              </div>
+                  icon={Mail}
+                />
 
-              <div>
-                <Input
+              <Input
                   type={showPassword ? 'text' : 'password'}
                   name="password"
                   placeholder="Password"
@@ -110,18 +106,9 @@ export default function SignIn() {
                   error={errors.password}
                   required
                   autoComplete="current-password"
-                >
-                  <Lock className="h-4 w-4" />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="p-1 hover:bg-neutral-100 rounded dark:hover:bg-neutral-800"
-                    aria-label={showPassword ? 'Hide password' : 'Show password'}
-                  >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                  </button>
-                </Input>
-              </div>
+                  icon={Lock}
+                  iconPosition="left"
+                />
 
               <Button
                 type="submit"
