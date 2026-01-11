@@ -43,9 +43,9 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-neutral-900 text-neutral-300">
-        <div className="container py-12">
+        <div className="container py-8 mobile:py-6">
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-4 mobile:gap-3 mb-6 mobile:mb-4">
             {/* Column 1 - Brand & Description */}
             <div>
               <Link to="/" className="flex items-center gap-2 mb-4 group">
@@ -104,8 +104,8 @@ export default function Footer() {
 
             {/* Column 2 - Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
-              <nav className="space-y-2">
+              <h3 className="text-base mobile:text-sm font-semibold text-white mb-3 mobile:mb-2">Quick Links</h3>
+              <nav className="space-y-1 mobile:space-y-1">
                 <Link
                   to="/"
                   className="block text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200 hover:underline"

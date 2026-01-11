@@ -348,16 +348,16 @@ export default function Header() {
                     <div className="space-y-4">
                       {/* User Profile Section */}
                       <div className="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg">
-                        <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center">
-                          <span className="text-white font-semibold">
+                        <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-semibold text-sm">
                             {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
                           </span>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="font-medium text-neutral-900 truncate">
+                        <div className="flex-1 min-w-0 overflow-hidden">
+                          <p className="font-medium text-neutral-900 truncate text-sm">
                             {user.name || 'User'}
                           </p>
-                          <p className="text-sm text-neutral-600 truncate">
+                          <p className="text-sm text-neutral-600 truncate text-xs">
                             {user.email || 'guest@example.com'}
                           </p>
                         </div>

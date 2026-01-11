@@ -71,8 +71,7 @@ export default function UPIPayment() {
       const newOrder = await placeOrder(orderData);
       setOrderId(newOrder.id);
       setPaymentStatus('success');
-      // Clear cart after showing success state
-      setTimeout(() => clearCart(), 1000);
+      // Don't clear cart immediately - let user see success state first
     } catch (error) {
       console.error('Error placing order:', error);
       setPaymentStatus('error');
@@ -151,7 +150,10 @@ export default function UPIPayment() {
               </div>
               
               <div className="flex gap-4 justify-center">
-                <Button variant="outline" onClick={() => navigate('/products')}>
+                <Button variant="outline" onClick={() => {
+                  clearCart();
+                  navigate('/products');
+                }}>
                   Continue Shopping
                 </Button>
                 <Button onClick={() => navigate('/orders')}>

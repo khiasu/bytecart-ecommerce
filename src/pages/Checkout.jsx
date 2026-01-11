@@ -127,7 +127,7 @@ export default function Checkout() {
       const newOrder = await placeOrder(orderData);
       setOrderId(newOrder.id);
       setOrderPlaced(true);
-      clearCart();
+      // Don't clear cart immediately - let user see success state first
     } catch (error) {
       console.error('Error placing order:', error);
       alert('Failed to place order. Please try again.');
@@ -160,7 +160,10 @@ export default function Checkout() {
                 ⏱️ Verification process takes 5-15 minutes
               </p>
               <div className="flex gap-4 justify-center">
-                <Button variant="outline" onClick={() => navigate('/products')}>
+                <Button variant="outline" onClick={() => {
+                  clearCart();
+                  navigate('/products');
+                }}>
                   Continue Shopping
                 </Button>
                 <Button onClick={() => navigate('/orders')}>

@@ -94,10 +94,11 @@ export default function ProductCard({ product }) {
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.15 }}
+      className="w-full"
     >
       <Card
         hoverable
-        className="overflow-hidden relative shadow-md hover:shadow-lg transition-shadow duration-150 bg-white dark:bg-neutral-800"
+        className="overflow-hidden relative shadow-md hover:shadow-lg transition-shadow duration-150 bg-white dark:bg-neutral-800 w-full"
       >
         {/* Image Section */}
         <div className="relative overflow-hidden bg-neutral-100 dark:bg-neutral-700">
@@ -158,9 +159,9 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* Content Section */}
-        <div className="p-3 tablet:p-5">
+        <div className="p-2 mobile:p-2 tablet:p-5">
           {/* Product Name */}
-          <h3 className="font-heading text-sm tablet:text-lg font-semibold text-neutral-900 dark:text-neutral-100 line-clamp-1">
+          <h3 className="font-heading text-xs mobile:text-xs tablet:text-lg font-semibold text-neutral-900 dark:text-neutral-100 line-clamp-2 mobile:line-clamp-2">
             {product.name}
           </h3>
 
@@ -170,13 +171,13 @@ export default function ProductCard({ product }) {
           </p>
 
           {/* Rating */}
-          <div className="mt-2 tablet:mt-3">
-            <Rating rating={product.rating} reviews={product.reviews} size="sm" />
+          <div className="mt-1 tablet:mt-3">
+            <Rating rating={product.rating} reviews={product.reviews} size="xs mobile:size-xs" />
           </div>
 
           {/* Price Section */}
-          <div className="mt-2 tablet:mt-4 flex items-center gap-2">
-            <span className="text-base tablet:text-xl font-bold text-primary-600 dark:text-primary-400">
+          <div className="mt-1 tablet:mt-4 flex items-center gap-2">
+            <span className="text-sm mobile:text-sm tablet:text-xl font-bold text-primary-600 dark:text-primary-400">
               {formatPrice(product.price)}
             </span>
             {product.originalPrice && (
@@ -194,13 +195,14 @@ export default function ProductCard({ product }) {
           </div>
 
           {/* Add to Cart Button */}
-          <div className="mt-3 tablet:mt-4 relative">
+          <div className="mt-2 tablet:mt-4 relative">
             <Button
               variant={inCart ? "secondary" : "primary"}
-              className="w-full"
+              className="w-full text-xs mobile:text-xs tablet:text-base"
               onClick={handleAddToCart}
               disabled={!product.inStock || isAdding}
               loading={isAdding}
+              size="sm mobile:sm tablet:md"
             >
               {!product.inStock 
                 ? 'Out of Stock' 

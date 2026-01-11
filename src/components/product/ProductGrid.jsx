@@ -85,7 +85,7 @@ export default function ProductGrid({
   }
 
   return (
-    <div className="w-full mobile:px-3 tablet:px-6">
+    <div className="w-full mobile:px-2 tablet:px-4">
       {/* Filters and Sort Bar */}
       {(showFilters || showSort) && (
         <div className="mb-6 flex flex-col tablet:flex-row tablet:items-center tablet:justify-between gap-4">
